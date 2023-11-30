@@ -1,0 +1,50 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="card">
+    <div class="card-body mx-4">
+      <div class="container">
+        <br><br>
+        <p class="my-5 mx-5" style="font-size: 30px;">Billing Form</p>
+        
+        <div class="row">
+          <div class="col-xl-10">
+            {% comment %} <p>Email</p> {% endcomment %}
+          </div>
+          <div class="col-xl-2">
+            {% for us in pp %}<p class="float-end fw-bold">Date: {{ us.date}}
+            </p>{% endfor %}
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col-xl-10">
+            {% comment %} <p>Address</p> {% endcomment %}
+          </div>
+          <div class="col-xl-2">
+            {% for us in pp %}<p class="float-end fw-bold">Time: {{ us.time}}
+            </p>{% endfor %}
+          </div>
+          <hr style="border: 2px solid black;">
+        </div>
+        <div class="row text-black">
+  
+          <div class="col-xl-12">
+            {% for us in pp %}<p class="float-end fw-bold">Total Amount: {{ us.amount}}
+            </p>{% endfor %}
+            {% for us in pp %}<p class="float-end fw-bold">Hotel Name: {{ us.hotel.user.first_name}}
+            </p>
+          </div>
+          <hr style="border: 2px solid black;">
+        </div>
+        <div class="send-button text-uppercase text-center">
+            <a href="paymentdone?id={{ us.id}}" style="color: red"> Pay Now</a>
+        </div>{% endfor %}
+        <br><br><br>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

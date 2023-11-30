@@ -1,0 +1,62 @@
+{% extends 'volunteers/vol_base.html' %}
+{% block content %}
+<!-- Start of contact page section
+	============================================= -->
+<!--	<section id="contact-us" class="contact-us-section">-->
+<!--		<div class="container">-->
+<!--			<div class="row section-content">-->
+<!--				<div class="contact-us-section-content">-->
+
+
+					<!-- /contact-list -->
+
+<!--					<div class="contact-map">-->
+<!--						<div id="google-map">-->
+<!--							<div id="googleMaps" class="google-map-container"></div>-->
+<!--						</div>&lt;!&ndash; /#google-map&ndash;&gt;-->
+<!--					</div>-->
+					<!-- /contact-map -->
+
+						<!-- / contact-form-title-->
+						<div class="contact-comment-form pb50 clearfix">
+							<div class="comment-form">
+						<div id="page-inner" >
+							<h1>Recipients list</h1><br>
+							<table class="table table-bordered table-striped table-hover">
+
+								<th class="success">Card number</th>
+								<th class="success wide"> Photo</th>
+								<th class="success">Recipient name</th>
+								<th class="success">Generation date</th>
+								<th class="success">Address of applicant</th>
+								<th class="success">Aadhar number</th>
+								<th class="success">Status</th>
+                                <th class="success">View Card</th>
+								{% for us in rec %}
+
+								<tr>
+									<td>{{ us.cardnum }}</td>
+									<td><img style="height: 50px;width: 150px" src="{{us.card.photo.url}}"></td>
+									<td>{{ us.card.name }}</td>
+									<td>{{ us.date }}</td>
+									<td>{{ us.card.address }}</td>
+									<td>{{ us.card.aadhar }}</td>
+									<td>{{ us.card.approved }}</td>
+                                    <td><a href="view?id={{ us.id }}" class=" btn btn-danger">View Card</a></td>
+								</tr>
+								{% endfor %}
+							</table>
+							</div>
+						</div>
+					</div>
+							<!-- /col-sm-3 -->
+<!--						</div>-->
+<!--					</div>-->
+<!--					&lt;!&ndash; / contact-form&ndash;&gt;-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</section>-->
+	<!-- End of contact page section
+	============================================= -->
+{% endblock %}

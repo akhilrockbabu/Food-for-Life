@@ -1,0 +1,140 @@
+{% extends 'donor/donor_base.html' %}
+{% block content %}
+<div class="container">
+  <div class="page-header text-center">
+      <h1>Payment Gateway</h1>
+  </div>
+  <!-- Credit Card Payment Form - START -->
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-12 col-md-6 col-md-offset-4">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <div class="row">
+                          <h3 class="text-center">Payment Details</h3>
+                          {% comment %} <div class="inlineimage">  {% endcomment %}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Mastercard-Curved.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Discover-Curved.png">
+                      </div>
+                      <div class="row">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Paypal-Curved.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/American-Express-Curved.png"> 
+                          {% comment %} </div>  {% endcomment %}
+                      </div> 
+                  <form role="form" action="paymentdone" method="POST">
+                    {% csrf_token %}
+                    {% comment %} <h1><a href="amt">Amount:{{pp.donation}}</a></h1> {% endcomment %}
+                  <div class="panel-body">
+                          <div class="row">
+                              <div class="col-xs-12">
+                                  <div class="form-group"> <label>CARD NUMBER</label>
+                                      <div class="input-group"> <input type="tel" class="form-control" placeholder="Enter valid Card Number" pattern="[0-9]{16}" title="Enter your 16 digit card number" required/> <span class="input-group-addon"><span class="fa fa-credit-card"></span></span> </div>
+                                  </div>
+                              </div>
+                          </div>
+                          {% comment %} <div class="input-group"> <input type="tel"  value="{{pp.id}}"class="form-control" placeholder="Valid Card Number" /> <span class="input-group-addon"><span class="fa fa-credit-card"></span></span> </div> {% endcomment %}
+
+                          <div class="row">
+                              <div class="col-xs-7 col-md-7">
+                                  <div class="form-group"> <label><span class="hidden-xs">CARD EXPIRY</span><span class="visible-xs-inline"></span></label> <input type="month" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" class="form-control" placeholder="MM / YY" title="enter the month and year" required/> </div>
+                              </div>
+                              <div class="col-xs-5 col-md-5 pull-right">
+                              {% comment %} </div>{% endcomment %}
+                              {% comment %} <div class="form-group">  <input type="hidden" name="id" value="{{pp}}" class="form-control" placeholder="CVC" /> </div> {% endcomment %}
+                                  <div class="form-group"> <label>CV CODE</label> <div class="input-group"> <input type="tel" class="form-control" placeholder="CVC" pattern="[0-9]{3}" title="enter the 3 digit cv code" required /> </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-xs-12">
+                                  <div class="form-group"> <label>CARD OWNER</label> <input type="text" name="cno" class="form-control" placeholder=" enter Card Owner Name" pattern="[A-Za-z]+" title="enter name without spaces" required/> </div>
+                              </div>
+                          </div>
+                      
+                  </div>
+                  <div class="panel-footer">
+                      <div class="row">
+                          <div class="col-xs-12"><button class="btn btn-success btn-lg btn-block" type="submit">Confirm Payment</button></div>
+                      </div>
+                  </div>
+              </div></form>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}
+
+{% comment %} ?id={{ us.id}}
+<a href="paymentsuccess"> {% endcomment %}
+{% comment %} <section class="p-4 p-md-5" style="background-image: url(https://mdbcdn.b-cdn.net/img/Photos/Others/background3.webp); ">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-5">
+      <div class="card rounded-3">
+        <div class="card-body p-4">
+          <div class="text-center mb-4">
+            <h3>Settings</h3>
+            <h6>Payment</h6>
+          </div>
+          <form action="">
+            <p class="fw-bold mb-4 pb-2">Saved cards:</p>
+
+            <div class="d-flex flex-row align-items-center mb-4 pb-1">
+              <img class="img-fluid" src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
+              <div class="flex-fill mx-3">
+                <div class="form-outline">
+                  <input type="text" id="formControlLgXc" class="form-control form-control-lg"
+                    value="**** **** **** 3193" />
+                  <label class="form-label" for="formControlLgXc">Card Number</label>
+                </div>
+              </div>
+              <a href="#!">Remove card</a>
+            </div>
+
+            <div class="d-flex flex-row align-items-center mb-4 pb-1">
+              <img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" />
+              <div class="flex-fill mx-3">
+                <div class="form-outline">
+                  <input type="text" id="formControlLgXs" class="form-control form-control-lg"
+                    value="**** **** **** 4296" />
+                  <label class="form-label" for="formControlLgXs">Card Number</label>
+                </div>
+              </div>
+              <a href="#!">Remove card</a>
+            </div>
+
+            <p class="fw-bold mb-4">Add new card:</p>
+
+            <div class="form-outline mb-4">
+              <input type="text" id="formControlLgXsd" class="form-control form-control-lg"
+                value="Anna Doe" />
+              <label class="form-label" for="formControlLgXsd">Cardholder's Name</label>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col-7">
+                <div class="form-outline">
+                  <input type="text" id="formControlLgXM" class="form-control form-control-lg"
+                    value="1234 5678 1234 5678" />
+                  <label class="form-label" for="formControlLgXM">Card Number</label>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-outline">
+                  <input type="password" id="formControlLgExpk" class="form-control form-control-lg"
+                    placeholder="MM/YYYY" />
+                  <label class="form-label" for="formControlLgExpk">Expire</label>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="form-outline">
+                  <input type="password" id="formControlLgcvv" class="form-control form-control-lg"
+                    placeholder="Cvv" />
+                  <label class="form-label" for="formControlLgcvv">Cvv</label>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-success btn-lg btn-block">Add card</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}

@@ -1,0 +1,46 @@
+{% extends 'admin/admin_base.html' %}
+{% block content %}
+							{% if message %}
+							<script>alert("{{ message }}")</script>
+							{% endif %}
+						<div class="contact-comment-form pb50 clearfix">
+							<div class="comment-form">
+						<div id="page-inner" >
+							{% if message %}
+							<script>
+								alert("{{ message }}")
+							</script>
+							{% endif %}
+							<h1>Feedbacks</h1><br>
+							<table class="table table-bordered table-striped table-hover">
+
+								<th class="success">Name</th>
+								<th class="success">User type</th>
+								<th class="success">Message </th>
+								<th class="success">Date</th>
+								<th class="success">Reply</th>
+
+								{% for us in feedback %}
+
+								<tr>
+									<form method="post" action="#" >
+										{% csrf_token %}
+									<td>{{ us.hotel.user.first_name }}
+										{{ us.donor.user.first_name }}
+										{{ us.volunteer.user.first_name }}
+									</td>
+									<td>{{ us.user.type}}</td>
+									<td>{{ us.message }}</td>
+									<td>{{ us.date }}</td>
+										<td><input type="text" name="reply" placeholder="enter reply"></td>
+										<input type="hidden" name="value" value="{{ us.id }}">
+										<td><button type="submit">Reply</button>
+									</form>
+								</tr>
+								{% endfor %}
+							</table>
+							</div>
+						</div>
+					</div>
+
+{% endblock %}

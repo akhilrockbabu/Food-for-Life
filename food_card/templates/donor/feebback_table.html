@@ -1,0 +1,32 @@
+{% extends 'donor/donor_base.html' %}
+{% block content %}
+						<div class="contact-comment-form pb50 clearfix">
+							<div class="comment-form">
+						<div id="page-inner" >
+							{% if message %}
+							<script>
+								alert("{{ message }}")
+							</script>
+							{% endif %}
+							<h1>Feedbacks</h1><br>
+							<table class="table table-bordered table-striped table-hover">
+
+								<th class="success">My Feedback</th>
+								<th class="success">Reply</th>
+								<th class="success">Date</th>
+
+								{% for us in reply %}
+
+								<tr>
+
+									<td>{{ us.message }}</td>
+									<td>{{ us.reply }}</td>
+									<td>{{ us.date }}</td>
+								</tr>
+								{% endfor %}
+							</table>
+							</div>
+						</div>
+					</div>
+
+{% endblock %}

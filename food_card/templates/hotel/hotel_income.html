@@ -1,0 +1,29 @@
+{% extends 'hotel/hotel_base.html' %}
+{% block content %}
+						<div class="contact-comment-form pb50 clearfix">
+							<div class="comment-form">
+						<div id="page-inner" >
+							<h1>Amount received</h1><br>
+							<table class="table table-bordered table-striped table-hover">
+
+								<th class="success">Card number</th>
+								<th class="success">Amount Received</th>
+								<th class="success">Time</th>
+								<th class="success">Date </th>
+								<th class="success">Payment Status </th>
+
+								{% for us in pp %}
+								<tr>
+									<td>{{ us.card.cardnum }}</td>
+									<td>{{ us.amount }}</td>
+									<td>{{ us.time }}</td>
+									<td>{{ us.date }}</td>
+									<td>{{ us.status }}</td>
+
+								</tr>
+								{% endfor %}
+							</table>
+							</div>
+						</div>
+					</div>
+{% endblock %}

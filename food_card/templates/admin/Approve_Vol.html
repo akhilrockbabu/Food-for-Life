@@ -1,0 +1,41 @@
+{% extends 'admin/admin_base.html' %}
+{% block content %}
+							{% if message %}
+							<script>alert("{{ message }}")</script>
+							{% endif %}
+						<div class="contact-comment-form pb50 clearfix">
+							<div class="comment-form">
+						<div id="page-inner" >
+							{% if message %}
+							<script>
+								alert("{{ message }}")
+							</script>
+							{% endif %}
+							<h1>New volunteers List</h1><br>
+							<table class="table table-bordered table-striped table-hover">
+
+								<th class="success">User Name</th>
+								<th class="success">Email</th>
+								<th class="success">Contact Number</th>
+								<th class="success">Address</th>
+								<th class="success">Date Of Join</th>
+								<th class="success">Approve</th>
+								<th class="success">Reject</th>
+								{% for us in vol %}
+
+								<tr>
+									<td>{{ us.user.first_name}}</td>
+									<td>{{ us.user.email}}</td>
+									<td>{{ us.phone_no}}</td>
+									<td>{{ us.address}}</td>
+									<td>{{ us.user.date_joined}}</td>
+									<td><a href="approve?id={{ us.user_id}}" class=" btn btn-success">Approve</a></td>
+									<td><a href="reject?id={{ us.user_id}}" class=" btn btn-danger">Remove</a></td>
+								</tr>
+								{% endfor %}
+							</table>
+							</div>
+						</div>
+					</div>
+
+{% endblock %}

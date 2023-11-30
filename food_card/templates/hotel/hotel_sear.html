@@ -1,0 +1,141 @@
+{% extends 'hotel/hotel_base.html' %}
+{% block content %}
+							{% if message %}
+							<script>alert("{{ message }}")</script>
+							{% endif %}
+<!-- Start of page head section
+	============================================= -->
+<!--	<section id="page-head" class="page-head-section">-->
+<!--		<div class="page-head-overlay">-->
+<!--			<div class="container">-->
+<!--				<div class="row">-->
+<!--					<div class="page-head-content">-->
+<!--&lt;!&ndash;						<div class="page-head-title text-uppercase">&ndash;&gt;-->
+<!--&lt;!&ndash;							<h2>donation</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</section>-->
+	<!-- End of  page head section  
+	============================================= -->
+
+
+	<!-- Start of Donate page content
+	============================================= -->
+	<section id="donate-page" class="donate-page-section">
+		<div class="container">
+			<div class="row section-content">
+				<div class="donation-content">
+					<div class="row">
+						<div class="col-sm-8">
+							<div class="donate-type pb50">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="donate-info">
+											<div class="side-bar-title mb20">
+												<h3>Search</h3>
+											</div>
+											<!-- /head -->
+
+												<div class="dropdown">
+													<form action="#" method="post" class="dropdown">
+														{% csrf_token %}
+														<div class="form-group">
+															<input type="text" name="search" placeholder="enter the card number" class="form-control"><br><br>
+
+															<div class="comment-form">
+												<div class="send-button text-uppercase">
+													<button type="submit" value="Submit">search</button>
+												</div>
+														</div>
+														</div>
+													</form>
+												</div>
+												<!-- / donate-cause-item-->
+											</div>
+										</div>
+										<!-- /info -->
+									</div>
+									<!-- /col-sm-6 -->
+									<div class="col-sm-6">
+										<div class="donate-amount pull-right">
+											<div class="side-bar-title mb20">
+											</div>
+											<div class="donate-dollar">
+												<div class="newsletter-form">
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- /col-sm-6 -->
+								</div>
+							</div>
+							<!-- /donate-type -->
+
+							<div class="donar-type">
+								<div class="donar-info">
+<!--									<div class="side-bar-title mb40">-->
+<!--										<h3>Donar Info</h3>-->
+<!--									</div>-->
+									<div class="donate-form">
+<!--										<div class="comment-form clearfix  mb20">-->
+<!--											<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">-->
+<!--												<div class="contact-comment-info">-->
+<!--													<input class="name" name="name" type="text" placeholder="Your Name*">-->
+<!--												</div>-->
+<!--												<div class="contact-comment-info">-->
+<!--													<input class="email" name="email" type="email" placeholder="Email*">-->
+<!--												</div>-->
+<!--												<div class="contact-comment-info">-->
+<!--													<input class="email" name="email" type="text" placeholder="Address*">-->
+<!--												</div>-->
+<!--												<div class="contact-comment-info">-->
+<!--													<div class="contact-comment-info">-->
+<!--														<input class="email" name="email" type="text" placeholder="Additional Note*">-->
+<!--													</div>-->
+<!--												</div>-->
+<!--											</form>-->
+<!--										</div>-->
+
+										<div class="donate-method">
+<!--											<div class="side-bar-title mb10">-->
+<!--												<h3>Donate Method</h3>-->
+<!--											</div>-->
+											<div class="method-list mb20">
+<!--												<form>-->
+<!--													<input type="radio" name="amount" value="Visa" checked=""> <label>Visa</label>-->
+<!--													<input type="radio" name="amount" value="Paypal"> <label>Paypal</label>-->
+<!--												</form>-->
+											</div>
+
+											</div>
+										</div>
+									</div>
+									<!-- /col-sm-6 -->
+								</div>
+							</div>
+							<!-- /donar-type -->
+						</div>
+						<!-- /col-sm-8 -->
+						<div class="col-sm-4">
+							<div class="side-bar-content ml15">
+								<!-- /side-bar-search -->
+								<div class="category mb40">
+									<!-- /title -->
+
+								</div>
+								<!-- /category-item -->	
+							</div>
+						</div>
+						<!-- /col-md-4 -->
+					</div>
+					<!-- /row -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End of  Dontae page content
+	============================================= -->
+{% endblock %}

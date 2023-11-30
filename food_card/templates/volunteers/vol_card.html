@@ -1,0 +1,65 @@
+{% extends 'volunteers/vol_base.html' %}
+{% block content %}
+							{% if message %}
+							<script>alert(alert('successful'))</script>
+							{% endif %}
+	<!-- Start of contact page section 
+	============================================= -->
+	<section id="contact-us" class="contact-us-section">
+		<div class="container">
+			<div class="row section-content">
+				<div class="contact-us-section-content">
+					
+
+					<!-- /contact-list -->
+
+<!--					<div class="contact-map">-->
+<!--						<div id="google-map">-->
+<!--							<div id="googleMaps" class="google-map-container"></div>-->
+<!--						</div>&lt;!&ndash; /#google-map&ndash;&gt;-->
+<!--					</div>-->
+					<!-- /contact-map -->
+
+					<div class="contact-form">
+						<div class="contact-form-title">
+							<div class="section-title text-center">
+								<div class="section-title-text text-uppercase">
+									<p>Do something GOOD !</p>
+								</div>
+								<div class="section-title-text">
+									<h2>Register card!</h2>
+								</div>
+							</div>
+						</div>
+						<!-- / contact-form-title-->
+						<div class="contact-comment-form pb50 clearfix">
+							<div class="comment-form">
+								<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+									{% csrf_token %}
+									<div class="contact-comment-info">
+										<input class="name" name="name" type="text" placeholder="name..">
+										{% comment %} pattern="[A-Za-z]{1,}" {% endcomment %}
+									</div>
+									<div class="contact-comment-info">
+										<input class="name" name="address" type="text" placeholder="address">
+									</div>
+									<div class="contact-comment-info">
+										<input class="name" name="image" type="file" placeholder="add ID">
+									</div>
+									<div class="contact-comment-info">
+										<div class="contact-comment-info">
+											<input class="name" name="aadhar" type="number" placeholder="enter aadhar no:">
+											{% comment %} pattern="^\d{4}\s\d{4}\s\d{4}$" {% endcomment %}
+										</div>
+									</div>
+
+									<div class="send-button text-uppercase text-center">
+										<button type="submit" value="Submit">Register</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div></div></div></section>
+
+{% endblock %}

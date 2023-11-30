@@ -1,0 +1,53 @@
+{% extends 'volunteers/vol_base.html' %}
+{% block content %}
+
+	<section class="about-area section-gap bg-white">
+		<div class="container">
+			<div class="row d-flex justify-content-end align-items-center">
+				<div class="col-lg-11">
+                    <form method="post">
+                        {% csrf_token %}
+				  <table class="table">
+                <tr><td><b>Name: </b></td><td><input name="name" class="form-control" value="{{ user.first_name }}" required></td></tr>
+                <tr><td><b>Email:</b></td><td><input name="email" class="form-control" value="{{ user.email }}" required></td></tr>
+                <tr><td><b>Contact:</b></td><td><input name="phone_no" class="form-control" value="{{ volpro.phone_no }}" pattern="[6-9]{1}[0-9]{9}" oninvalid="setCustomValidity('Please enter Valid Mobile Number')" onkeyup="setCustomValidity('')" required></td></tr>
+                <tr><td><b>Address:</b></td><td><input value="{{ volpro.address }}" class="form-control" name="address" required></td></tr>
+                      <tr><td><b>Username:</b></td><td><input class="form-control" name="username" value="{{ volpro.user.username}}" required></td></tr>
+                                <span id='message'></span>
+<tr><td></td><td><button type="submit" name="profile" value="profile"  class="primary-btn">Submit<span class="lnr lnr-arrow-right"></span></button></td></tr>
+            </table>
+
+                    </form>
+                    <h1>Change Password</h1>
+                    <form method="post">
+                        {% csrf_token %}
+                        <table class="table">
+                      <tr><td><b> New Password:</b></td><td><input id="password" class="form-control" type="password" name="password"  required></td></tr>
+                      <tr><td><b>Confirm Password:</b></td><td><input id="confirm_password" class="form-control" onchange='check();' type="password"   required></td></tr>
+                        <tr><td></td><td><button type="submit" name="profile" value="pass"   class="primary-btn">Submit<span class="lnr lnr-arrow-right"></span></button></td></tr>
+                    </table>
+                    </form>
+				</div>
+				<div class="col-lg-6 about-right no-padding">
+					<img class="img-fluid" src="" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End About Area -->
+<script>
+   var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+      document.getElementById('confirm_password').value = "";
+    document.getElementById('message').innerHTML = 'not matching';
+      alert("Re enter Password correctly")
+  }
+}
+    </script>
+
+{% endblock %}

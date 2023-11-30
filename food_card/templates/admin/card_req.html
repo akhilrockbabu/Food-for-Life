@@ -1,0 +1,69 @@
+{% extends 'admin/admin_base.html' %}
+{% block content %}
+							{% if message %}
+							<script> alert("{{ message }}") </script>
+							{% endif %}
+<!-- Start of contact page section
+	============================================= -->
+<!--	<section id="contact-us" class="contact-us-section">-->
+<!--		<div class="container">-->
+<!--			<div class="row section-content">-->
+<!--				<div class="contact-us-section-content">-->
+
+
+					<!-- /contact-list -->
+
+<!--					<div class="contact-map">-->
+<!--						<div id="google-map">-->
+<!--							<div id="googleMaps" class="google-map-container"></div>-->
+<!--						</div>&lt;!&ndash; /#google-map&ndash;&gt;-->
+<!--					</div>-->
+					<!-- /contact-map -->
+
+						<!-- / contact-form-title-->
+						<div class="contact-comment-form pb50 clearfix">
+							<div class="comment-form">
+						<div id="page-inner" >
+							<h1>Card requests</h1><br>
+							<table class="table table-bordered table-striped table-hover">
+
+								<th class="success">applicant image</th>
+								<th class="success">Volunteer Name</th>
+								<th class="success">Volunteer ID</th>
+								<th class="success">Name of applicant</th>
+								<th class="success">Contact Number of volunteer</th>
+								<th class="success">Address of applicant</th>
+								<th class="success">Aadhar number</th>
+								<th class="success">Date of application</th>
+								<th class="success">Approve</th>
+								<th class="success">Remove</th>
+								{% for us in requ %}
+
+								<tr>
+									<td><img src="{{us.photo.url}}"></td>
+									<td>{{ us.user.first_name}}</td>
+									<td>{{ us.user.id}}</td>
+									<td>{{ us.name}}</td>
+									<td>{{ us.volun.phone_no}}</td>
+									<td>{{ us.address}}</td>
+									<td>{{ us.aadhar}}</td>
+									<td>{{ us.date}}</td>
+									<td><a href="cardgen?id={{ us.id}}" class=" btn btn-success">Approve</a></td>
+									<td><a href="rejcard?id={{ us.id}}" class=" btn btn-danger">Remove</a></td>
+								</tr>
+								{% endfor %}
+							</table>
+							</div>
+						</div>
+					</div>
+							<!-- /col-sm-3 -->
+<!--						</div>-->
+<!--					</div>-->
+<!--					&lt;!&ndash; / contact-form&ndash;&gt;-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</section>-->
+	<!-- End of contact page section
+	============================================= -->
+{% endblock %}

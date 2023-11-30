@@ -1,0 +1,59 @@
+{% extends 'donor/donor_base.html' %}
+{% block content %}
+<!-- Start of contact page section
+	============================================= -->
+<!--	<section id="contact-us" class="contact-us-section">-->
+<!--		<div class="container">-->
+<!--			<div class="row section-content">-->
+<!--				<div class="contact-us-section-content">-->
+
+
+					<!-- /contact-list -->
+
+<!--					<div class="contact-map">-->
+<!--						<div id="google-map">-->
+<!--							<div id="googleMaps" class="google-map-container"></div>-->
+<!--						</div>&lt;!&ndash; /#google-map&ndash;&gt;-->
+<!--					</div>-->
+					<!-- /contact-map -->
+
+						<!-- / contact-form-title-->
+						<div class="contact-comment-form pb50 clearfix">
+							<div class="comment-form">
+						<div id="page-inner" >
+							<h1>My Donations</h1><br>
+							<table class="table table-bordered table-striped table-hover">
+
+								<th class="success">Txn. id</th>
+								<th class="success">Donated amount</th>
+								<th class="success">Txn. Time</th>
+								<th class="success">Txn. Date</th>
+								<th class="success">View receipt</th>
+								<th class="success">Download Receipt</th>
+
+								{% for us in donations %}
+
+								<tr>
+									<td>{{ us.id}}</td>
+									<td>{{ us.donation}}</td>
+									<td>{{ us.time}}</td>
+									<td>{{ us.date}}</td>
+									<td><a href="invoice?id={{ us.id}}" class=" btn btn-success">View receipt</a></td>
+									<td><a href="invoice_pdf?id={{ us.id}}" class=" btn btn-warning">Download receipt</a></td>
+								</tr>
+								{% endfor %}
+							</table>
+							</div>
+						</div>
+					</div>
+							<!-- /col-sm-3 -->
+<!--						</div>-->
+<!--					</div>-->
+<!--					&lt;!&ndash; / contact-form&ndash;&gt;-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</section>-->
+	<!-- End of contact page section
+	============================================= -->
+{% endblock %}

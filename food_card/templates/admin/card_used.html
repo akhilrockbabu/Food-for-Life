@@ -1,0 +1,69 @@
+{% extends 'admin/admin_base.html' %}
+{% block content %}
+<!-- Start of contact page section
+	============================================= -->
+<!--	<section id="contact-us" class="contact-us-section">-->
+<!--		<div class="container">-->
+<!--			<div class="row section-content">-->
+<!--				<div class="contact-us-section-content">-->
+					
+
+					<!-- /contact-list -->
+
+<!--					<div class="contact-map">-->
+<!--						<div id="google-map">-->
+<!--							<div id="googleMaps" class="google-map-container"></div>-->
+<!--						</div>&lt;!&ndash; /#google-map&ndash;&gt;-->
+<!--					</div>-->
+					<!-- /contact-map -->
+
+						<!-- / contact-form-title-->
+						<div class="contact-comment-form pb50 clearfix">
+							<div class="comment-form">
+						<div id="page-inner" >
+							<h1>Used cards List</h1><br>
+							<table class="table table-bordered table-striped table-hover">
+
+								<th class="success">Card number</th>
+								<th class="success">Hotel</th>
+								<th class="success">Date</th>
+
+								<th class="success">Time</th>
+								<th class="success">card holder name</th>
+								<th class="success">Volunteer name</th>
+								<th class="success">Amount</th>
+								<th class="success">Pay</th>
+
+								{% for us in used %}
+
+								<tr>
+									<td>{{ us.card.cardnum }}</td>
+									<td>{{ us.hotel.user.first_name }}</td>
+									<td>{{ us.date }}</td>
+
+									<td>{{ us.time }}</td>
+									<td>{{ us.card.card.name }}</td>
+									<td>{{ us.card.card.volun.user.first_name }}</td>
+									<td>{{ us.amount}}</td>
+									<td><a href="bill?id={{ us.id}}" class=" btn btn-success">Pay</a></td>
+
+
+								</tr>
+								{% endfor %}
+							</table>
+															<td>Total:{{ total }}</td>
+
+							</div>
+						</div>
+					</div>
+							<!-- /col-sm-3 -->
+<!--						</div>-->
+<!--					</div>-->
+<!--					&lt;!&ndash; / contact-form&ndash;&gt;-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</section>-->
+	<!-- End of contact page section  
+	============================================= -->
+{% endblock %}

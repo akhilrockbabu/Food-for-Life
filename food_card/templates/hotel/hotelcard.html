@@ -1,0 +1,37 @@
+{% extends 'hotel/hotel_base.html' %}
+{% block content %}
+							{% if message %}
+                                <script xmlns="http://www.w3.org/1999/html">alert("{{ message }}")</script>
+							{% endif %}
+						<div class="contact-comment-form pb50 clearfix">
+							<div class="comment-form">
+						<div id="page-inner" >
+							<h1>Issued cards</h1><br>
+							<table class="table table-bordered table-striped table-hover">
+
+								<th class="success">Recipient image</th>
+								<th class="success">Card number</th>
+								<th class="success">Recipient Name</th>
+								<th class="success">Recipient address</th>
+								<th class="success">Volunteer name</th>
+								<th class="success">Volunteer number</th>
+								<th class="success">Date of issue</th>
+								<th class="success">Mark as used</th>
+								{% for us in requ %}
+
+								<tr>
+									<td><img src="{{us.card.photo.url}}"></td>
+									<td>{{ us.cardnum}}</td>
+									<td>{{ us.card.name}}</td>
+									<td>{{ us.card.address}}</td>
+									<td>{{ us.card.user.first_name}}</td>
+									<td>{{ us.card.volun.phone_no}}</td>
+									<td>{{ us.date}}</td>
+									<td><a href="markused?id={{ us.id}}" class=" btn btn-success">Mark as used</a></td>
+								</tr>
+								{% endfor %}
+							</table>
+							</div>
+						</div>
+					</div>
+{% endblock %}

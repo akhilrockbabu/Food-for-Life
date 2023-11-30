@@ -1,0 +1,415 @@
+/* 
+FundMe - is a Premium HTML Responsive Templeate by HTMLmate Team. You can use this for anykind of Nonprofit website
+
+File:           CSS Base
+Version:        1.1
+Last change:     
+Author:        HTMLmate
+
+*/
+
+/*-------- css code for responsive layout  --------*/
+/*  To make Responsive
+---------------------------------------------------------------------- /
+*   1 - media screen and (max-width: 1199px)
+*   2 - media screen and (max-width: 991px)
+*   3 - media screen and (max-width: 767px)
+*   4 - media screen and (max-width: 680px)
+*   5 - media screen and (max-width: 480px)
+*
+---------------------------------------------------------------------- 
+
+
+/*  1 - media screen and (max-width: 1199px)
+------------------------------------------------------------------------------------------ */
+
+@media screen and (max-width: 991px) { 
+	.nav>li>a {
+		padding: 39px 5px;
+	}
+	.sb-search {
+		display: none;
+	}
+	.home-donate.donate-btn-1 {
+		right: 0;
+	}
+	.way-help-pic-text {
+		margin-bottom: 35px;
+	}
+	.count-right-img {
+		margin-top: 40px;
+	}
+	.gola-reach-list li:first-child {
+		padding-right: 10px;
+	}
+	.play-text p {
+		display: none;
+	}
+	.play-icon-text {
+		left: 62%;
+		transform: translateX(-60%) translateY(-50%);
+	}
+	.video-play-section {
+		position: relative;
+	}
+	#video-bg {
+		padding-bottom: 0;
+	}
+	.overlay {
+		padding-bottom: 0;
+	}
+	.footer-gallery li {
+		margin-left: 0;
+	}
+	.fix-menu .nav>li>a {
+		padding: 39px 6px;
+	}
+	.fix-menu .home-donate.donate-btn-1 {
+		top: 37px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.home-donate.donate-btn-1 {
+		right: 0px;
+	}
+	.header-top {
+		display: none;
+	}
+	.container {
+		padding: 0px 30px;
+	}
+	.navbar-collapse.in .nav>li>a {
+		padding: 10px 5px;
+	}
+	#main-menu {
+		display: block;
+	}
+	.menu-bar {
+		padding-bottom: 40px;
+	}
+	.stuck.menu-bar {
+		padding-bottom: 35px;
+	}
+	.navbar-brand {
+		margin-left: 13%;
+		z-index: 999;
+	}
+	.hades.tparrows {
+		display: none;
+	}
+	.colmd3 {
+		margin: 35px auto;
+	}
+	.gola-reach-list li:first-child {
+		padding-right: 5px;
+	}
+	.footer-contact-content .footer-social {
+		padding-right: 15px;
+	}
+	.latest-news-slide-content {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	.impact-achieve-text {
+		padding-top: 0;
+	}
+	.impact-achieve-icon span {
+		font-size: 45px;
+	}
+	.impact-achieve-text .count, .dolor {
+		font-size: 26px;
+	}
+	.impact-left-content {
+		max-width: 525px;
+		margin: 50px auto;
+	}
+	.section-title {
+		padding-bottom: 30px;
+	}
+	.footer-head-title {
+		padding-bottom: 20px;
+		margin-top: 30px;
+	}
+	.section-content {
+		padding: 45px 0px 35px;
+	}
+	.section-title-text h2 {
+		font-size: 30px; 
+	}
+	.recent-causes-section .section-title {
+		padding-bottom: 35px;
+	}
+	.blog-pic-text {
+		padding: 15px;
+	}
+	.leave-comment {
+		margin-bottom: 40px;
+	}
+	.donar-type {
+		margin-bottom: 25px;
+	}
+	.event-single-time {
+		float: none;
+	}
+}
+
+@media screen and (max-width: 580px) { 
+	.contact-comment-info input,
+	.leave-commen-info input, .leave-commen-info textarea, .contact-comment-info input, .contact-comment-info textarea {
+		width: 100%;
+	}
+	.leave-commen-info input, .leave-commen-info textarea, .contact-comment-info input, .contact-comment-info textarea {
+		float: none;
+	}
+	.leave-comment-form {
+		padding: 15px;
+	}
+
+	.latest-news-section .section-title {
+		padding-bottom: 25px;
+	}
+	.count-right-img:before {
+		display: none;
+	}
+	.count-right-img:after {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) { 
+	#countdown #tiles > span {
+		height: 80px;
+		width: 80px;
+		font-size: 20px;
+		line-height: 20px;
+	}
+	#countdown .labels li {
+		font-size: 14px;
+	}
+	#countdown .labels li:nth-child(4) {
+		padding-left: 40px;
+	}
+	#countdown .labels li:nth-child(2) {
+		padding-left: 63px;
+	}
+	#countdown .labels li:nth-child(3) {
+		padding-left: 73px;
+	}
+	#countdown .labels li:nth-child(4) {
+		padding-left: 67px;
+	}
+	.navbar-brand {
+		width: 150px;
+	}
+	.recent-causes-pic-text {
+		max-width: 365px;
+		margin: 0 auto;
+	}
+	.date {
+		font-size: 55px;
+	}
+	.footer-contact-info-list .icon {
+		font-size: 23px;
+	}
+	.pb60 {
+		padding-bottom: 30px;
+	}
+	.play-icon-text {
+		left: 60%;
+	}
+	.video-bg-section .section-title-text h2 {
+		line-height: 30px;
+	}
+	.section-title-text h2 {
+		font-size: 25px;
+	}
+	.mr45 {
+		margin-right: 25px;
+	}
+	.page-head-title h2 {
+		font-size: 30px;
+	}
+	.contact-form-title .section-title {
+		padding-bottom: 10px;
+	}
+}
+@media screen and (max-width: 420px) { 
+	#countdown #tiles > span {
+		height: 60px;
+		width: 60px;
+		font-size: 16px;
+		line-height: 40px;
+		margin: 0px 10px 0px 0px;
+	}
+	#countdown .labels li {
+		font-size: 12px;
+	}
+	#countdown .labels li:nth-child(1) {
+		padding-left: 14px;
+		padding-bottom: 5px;
+	}
+	#countdown .labels li:nth-child(2) {
+		padding-left: 43px;
+	}
+	#countdown .labels li:nth-child(3) {
+		padding-left: 45px;
+	}
+	#countdown .labels li:nth-child(4) {
+		padding-left: 42px;
+	}
+	.count-right-img {
+		margin-top: 25px;
+		padding-left: 0;
+	}
+	.can-we-do-section .section-title,
+	.way-help-section .section-title {
+		padding-bottom: 0px;
+	}
+	.section-content {
+		padding: 30px 0px 25px;
+	}
+	.pb35 {
+		padding-bottom: 20px;
+	}
+	.pb30 {
+		padding-bottom: 18px;
+	}
+
+	.mt40 {
+		margin-top: 25px;
+	}
+	.menu-btn {
+		top: 25px;
+	}
+	.navbar-brand {
+		width: 140px;
+	}
+	.home-donate.donate-btn-1 a {
+		padding: 6px 8px;
+	}
+	.home-donate.donate-btn-1 {
+		top: 30px;
+	}
+	.menu-bar {
+		padding-bottom: 20px;
+	}
+	.stuck.menu-bar {
+		padding-bottom: 20px;
+	}
+	.mt25 {
+		margin-top: 15px;
+	}
+	.countdown-head h2 {
+		font-size: 20px;
+	}
+	.date {
+		font-size: 40px;
+		line-height: 40px;
+	}
+	.mr45 {
+		margin-right: 15px;
+	}
+	.footer-contact-content .footer-social {
+		float: left !important;
+		padding-left: 15px;
+	}
+	.pt75 {
+		padding-top: 50px;
+	}
+	.gola-reach-list {
+		margin-top: 20px;
+	}
+	.play-icon-text {
+		left: 55%;
+	}
+	.video-bg-section .section-content {
+		padding: 33px 0px;
+	}
+	.latest-news-head h3 a {
+		font-size: 20px;
+	}
+	.owl-dots,
+	.owl-dots {
+		margin-left: 15px;
+	}
+	.pb40 {
+		padding-bottom: 25px;
+	}
+	.about-slider-text-head h2 {
+		font-size: 26px;
+	}
+	.blog-head-title h2 a {
+		font-size: 20px;
+	}
+	.pt40 {
+		padding-top: 25px;
+	}
+	.mb40 {
+		margin-bottom: 25px;
+	}
+	.page-head-title h2 {
+		font-size: 25px;
+	}
+	.meta-list li a {
+		margin-right: 10px;
+	}
+	.share-this {
+		float: none !important;
+	}
+	.blog-tag {
+		margin-bottom: 10px;
+		width: 100%;
+	}
+	.blog-tag li {
+		padding: 5px 10px;
+	}
+	.page-breadcrumb {
+		top: 65px;
+	}
+	.donate-amount {
+		float: none !important;
+		margin-top: 25px;
+	}
+}
+@media screen and (max-width: 375px) {  
+	.gola-reach-list {
+		padding: 0px 50px;
+	}
+	.cause-text-head {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.page-breadcrumb {
+		right: 30px;
+		top: 65px;
+	}
+	.comment-form button {
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 360px) { 
+
+	.gola-reach-list {
+		padding: 0px 28px;
+	}
+	.play-icon {
+		height: 60px;
+		width: 60px;
+		line-height: 74px;
+		padding-left: 5px;
+	}
+
+	.date {
+		font-size: 35px;
+		line-height: 35px;
+	}
+
+}
+@media screen and (max-width: 320px) {  
+
+	.navbar-brand {
+		width: 135px;
+	}
+}
